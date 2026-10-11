@@ -1,0 +1,2488 @@
+:root {
+    --bg: #060a08;
+    --bg2: #0b110e;
+    --card: #101813;
+    --card2: #141e18;
+
+    --green: #35d38b;
+    --green2: #7af0b5;
+    --green-dark: #123d29;
+
+    --purple: #8d6bff;
+    --gold: #d8b45a;
+
+    --white: #f5f7f5;
+    --muted: #9aa69f;
+
+    --border: rgba(255,255,255,.08);
+
+    --shadow: 0 25px 70px rgba(0,0,0,.45);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--white);
+
+    background: var(--bg);
+
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+
+/* HEADER */
+
+.header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background: rgba(6,10,8,.88);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(20px);
+}
+
+.nav {
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.menu {
+    display: flex;
+
+    gap: 30px;
+}
+
+.menu a {
+    color: #adb7b1;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.menu a:hover {
+    color: var(--green);
+}
+
+.nav-button {
+    background: var(--green);
+
+    color: #031009;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    font-weight: 800;
+
+    font-size: 13px;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 700px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(53,211,139,.14),
+            transparent 35%
+        ),
+        var(--bg);
+
+    padding: 90px 0;
+}
+
+.hero-grid {
+    width: min(1120px,92%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+
+    color: var(--green);
+
+    border: 1px solid rgba(53,211,139,.2);
+
+    background: rgba(53,211,139,.07);
+
+    padding: 7px 12px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(50px,6vw,78px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--green);
+
+    display: block;
+}
+
+.hero-text p {
+    max-width: 580px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 14px 23px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    transition: .2s;
+}
+
+.btn-primary {
+    background: var(--green);
+
+    color: #031009;
+}
+
+.btn-primary:hover {
+    background: var(--green2);
+
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+
+    color: white;
+
+    background: rgba(255,255,255,.03);
+}
+
+.hero-note {
+    margin-top: 25px;
+
+    color: #758079;
+
+    font-size: 11px;
+}
+
+.hero-note span {
+    color: var(--green);
+}
+
+
+/* CHART */
+
+.chart-container {
+    background: #0d1510;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    box-shadow: var(--shadow);
+
+    transform: perspective(1000px) rotateY(-3deg);
+}
+
+.chart-top,
+.chart-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.chart-top small,
+.chart-bottom small {
+    display: block;
+
+    color: #67736c;
+
+    font-size: 9px;
+}
+
+.chart-top strong,
+.chart-bottom strong {
+    font-size: 13px;
+}
+
+.market-positive {
+    color: var(--green);
+
+    font-weight: 800;
+}
+
+.chart {
+    height: 330px;
+
+    position: relative;
+
+    margin: 15px 0;
+
+    overflow: hidden;
+}
+
+.chart-grid {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.04) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+}
+
+.chart svg {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+}
+
+.chart-label {
+    position: absolute;
+
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+.entry {
+    left: 48%;
+
+    top: 45%;
+
+    background: rgba(53,211,139,.15);
+
+    color: var(--green);
+}
+
+.target {
+    right: 7%;
+
+    top: 10%;
+
+    background: rgba(141,107,255,.15);
+
+    color: #b6a5ff;
+}
+
+
+/* STATS */
+
+.stats {
+    background: #0b110e;
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 35px 0;
+}
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    text-align: center;
+}
+
+.stats strong {
+    display: block;
+
+    color: var(--green);
+
+    font-family: "Space Grotesk";
+
+    font-size: 26px;
+}
+
+.stats span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* SECTIONS */
+
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+
+    max-width: 760px;
+
+    margin: 0 auto 55px;
+}
+
+.section-title span {
+    color: var(--green);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.section-title h2 {
+    font-family: "Space Grotesk";
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    margin-top: 10px;
+
+    letter-spacing: -1px;
+}
+
+.section-title p {
+    color: var(--muted);
+
+    margin-top: 15px;
+}
+
+
+/* METHOD */
+
+.method {
+    background: var(--bg);
+}
+
+.method-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 18px;
+}
+
+.method-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    padding: 30px;
+
+    border-radius: 14px;
+
+    transition: .25s;
+}
+
+.method-card:hover {
+    border-color: rgba(53,211,139,.3);
+
+    transform: translateY(-4px);
+}
+
+.method-number {
+    color: var(--green);
+
+    font-family: "Space Grotesk";
+
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+.method-card h3 {
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.method-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* MEMBERSHIPS */
+
+.memberships {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(53,211,139,.05),
+            transparent 45%
+        ),
+        #090e0b;
+}
+
+.plans {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+
+    align-items: stretch;
+}
+
+.plan {
+    position: relative;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.plan.featured {
+    border-color: rgba(53,211,139,.4);
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 60px rgba(53,211,139,.08);
+}
+
+.plan.premium {
+    border-color: rgba(141,107,255,.45);
+
+    background:
+        linear-gradient(
+            160deg,
+            #161126,
+            #101813
+        );
+}
+
+.popular {
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    text-align: center;
+
+    background: var(--green);
+
+    color: #031009;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    padding: 7px;
+}
+
+.plan-label {
+    color: var(--green);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.plan h3 {
+    font-family: "Space Grotesk";
+
+    font-size: 30px;
+
+    margin: 7px 0;
+}
+
+.plan-header p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.price {
+    margin: 30px 0;
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+}
+
+.price small {
+    color: #67736c;
+
+    font-size: 9px;
+}
+
+.price strong {
+    font-family: "Space Grotesk";
+
+    font-size: 38px;
+}
+
+.price span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.plan ul {
+    list-style: none;
+
+    margin-bottom: 30px;
+
+    flex: 1;
+}
+
+.plan li {
+    padding: 9px 0;
+
+    color: #c3cbc6;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid rgba(255,255,255,.04);
+}
+
+.plan li.disabled {
+    color: #4e5952;
+}
+
+.plan-button {
+    text-align: center;
+
+    border: 1px solid rgba(53,211,139,.3);
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    color: var(--green);
+
+    font-weight: 800;
+
+    font-size: 13px;
+}
+
+.featured .plan-button {
+    background: var(--green);
+
+    color: #031009;
+}
+
+.premium-button {
+    background: var(--purple);
+
+    color: white;
+
+    border-color: var(--purple);
+}
+
+.premium-badge {
+    color: #b9a8ff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    margin-bottom: 10px;
+}
+
+
+/* COMPARISON */
+
+.comparison {
+    background: #0b110e;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 650px;
+}
+
+th,
+td {
+    padding: 18px;
+
+    border-bottom: 1px solid var(--border);
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+th:first-child,
+td:first-child {
+    text-align: left;
+}
+
+th {
+    color: var(--green);
+
+    background: var(--card);
+}
+
+td {
+    color: #bbc4be;
+}
+
+td:not(:first-child) {
+    color: var(--green);
+}
+
+
+/* VIP */
+
+.vip {
+    background:
+        radial-gradient(
+            circle at 20%,
+            rgba(141,107,255,.15),
+            transparent 40%
+        ),
+        #0b0a13;
+}
+
+.vip-box {
+    border: 1px solid rgba(141,107,255,.25);
+
+    background: rgba(141,107,255,.05);
+
+    padding: 50px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.vip-box span {
+    color: #a995ff;
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
+
+.vip-box h2 {
+    font-family: "Space Grotesk";
+
+    font-size: 42px;
+
+    margin: 5px 0;
+}
+
+.vip-box p {
+    color: var(--muted);
+
+    max-width: 600px;
+}
+
+
+/* TESTIMONIALS */
+
+.testimonials {
+    background: var(--bg);
+}
+
+.testimonials-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.testimonials article {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    padding: 30px;
+
+    border-radius: 14px;
+}
+
+.stars {
+    color: #e3b858;
+
+    margin-bottom: 15px;
+}
+
+.testimonials p {
+    color: #b7c0ba;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.testimonials strong {
+    font-size: 12px;
+}
+
+
+/* FAQ */
+
+.faq {
+    background: #0b110e;
+}
+
+.faq-list {
+    max-width: 760px;
+
+    margin: auto;
+}
+
+.faq-item {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    margin-bottom: 10px;
+}
+
+.faq-item button {
+    width: 100%;
+
+    padding: 20px;
+
+    background: transparent;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    text-align: left;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    border: 0;
+}
+
+.faq-item button span {
+    color: var(--green);
+
+    font-size: 20px;
+}
+
+.faq-answer {
+    display: none;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    padding: 0 20px 20px;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+
+/* FINAL CTA */
+
+.final-cta {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(53,211,139,.13),
+            transparent 50%
+        ),
+        var(--bg);
+}
+
+.final-cta > div > span {
+    color: var(--green);
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
+
+.final-cta h2 {
+    font-family: "Space Grotesk";
+
+    font-size: 48px;
+
+    margin: 10px 0;
+}
+
+.final-cta p {
+    color: var(--muted);
+
+    margin-bottom: 25px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #030604;
+
+    border-top: 1px solid var(--border);
+
+    padding: 50px 0 20px;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer p {
+    color: var(--muted);
+
+    margin: 10px 0 20px;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    font-size: 12px;
+
+    color: #89948d;
+}
+
+.footer-links a:hover {
+    color: var(--green);
+}
+
+.copyright {
+    border-top: 1px solid var(--border);
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    color: #58625c;
+
+    font-size: 10px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+
+    .menu {
+        display: none;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-note {
+        max-width: 500px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .chart-container {
+        transform: none;
+    }
+
+    .method-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .plans {
+        grid-template-columns: 1fr;
+
+        max-width: 550px;
+
+        margin: auto;
+    }
+
+    .plan.featured {
+        transform: none;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vip-box {
+        flex-direction: column;
+
+        text-align: center;
+    }
+}
+
+
+@media(max-width:600px) {
+
+    section {
+        padding: 70px 0;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2,1fr);
+
+        gap: 25px;
+    }
+
+    .method-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+    .vip-box {
+        padding: 30px 20px;
+    }
+
+    .vip-box h2 {
+        font-size: 34px;
+    }
+
+    .final-cta h2 {
+        font-size: 36px;
+    }
+}
+```
+
+/* =====================================================
+   GRÁFICO PROFESIONAL DE TRADING
+===================================================== */
+
+.chart-container {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #11110f,
+            #070707
+        );
+
+    border: 1px solid rgba(212,175,55,.22);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.65),
+        0 0 50px rgba(212,175,55,.04);
+
+    transform:
+        perspective(1000px)
+        rotateY(-3deg);
+}
+
+
+/* CABECERA */
+
+.chart-top,
+.chart-bottom {
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.chart-top small,
+.chart-bottom small {
+
+    display: block;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: .7px;
+}
+
+.chart-top strong,
+.chart-bottom strong {
+
+    display: block;
+
+    color: #eee;
+
+    font-size: 13px;
+}
+
+.market-positive {
+
+    color: var(--gold-light);
+
+    font-weight: 900;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   ÁREA DEL GRÁFICO
+===================================================== */
+
+.trading-chart {
+
+    height: 330px;
+
+    position: relative;
+
+    margin: 15px 0;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background:
+
+        radial-gradient(
+            circle at 75% 35%,
+            rgba(212,175,55,.045),
+            transparent 35%
+        ),
+
+        #080808;
+}
+
+
+/* GRID */
+
+.chart-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+    opacity: .8;
+}
+
+
+/* =====================================================
+   VELAS
+===================================================== */
+
+.candles {
+
+    position: absolute;
+
+    inset: 15px 10px 10px 10px;
+
+    display: flex;
+
+    align-items: stretch;
+
+    justify-content: space-between;
+
+    gap: 5px;
+
+    padding: 5px;
+
+    z-index: 3;
+}
+
+
+.candle {
+
+    position: relative;
+
+    flex: 1;
+
+    max-width: 13px;
+
+    opacity: 0;
+
+    transform:
+        translateY(20px)
+        scaleY(.7);
+
+    animation:
+        candleAppear .45s ease forwards;
+}
+
+
+/* MECHA */
+
+.candle::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: var(--wick-top);
+
+    width: 1px;
+
+    height: var(--wick-height);
+
+    transform: translateX(-50%);
+
+    background:
+        var(--candle-color);
+}
+
+
+/* CUERPO */
+
+.candle-body {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    top: var(--body-top);
+
+    height: var(--body-height);
+
+    min-height: 4px;
+
+    border-radius: 2px;
+
+    background:
+        var(--candle-color);
+
+    box-shadow:
+        0 0 5px
+        rgba(212,175,55,.08);
+}
+
+
+/* VELA ALCISTA */
+
+.candle.bull {
+
+    --candle-color:
+        linear-gradient(
+            180deg,
+            #f2d978,
+            #b58c24
+        );
+}
+
+
+/* VELA BAJISTA */
+
+.candle.bear {
+
+    --candle-color:
+        #6e5a25;
+}
+
+
+/* ÚLTIMA VELA */
+
+.candle:last-child .candle-body {
+
+    box-shadow:
+        0 0 12px
+        rgba(212,175,55,.65);
+}
+
+
+/* ANIMACIÓN */
+
+@keyframes candleAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scaleY(.6);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scaleY(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   LÍNEAS DE TRADING
+===================================================== */
+
+.trade-line {
+
+    position: absolute;
+
+    left: 10px;
+
+    right: 10px;
+
+    z-index: 6;
+
+    height: 1px;
+
+    border-top:
+        1px dashed;
+
+    opacity: 0;
+
+    animation:
+        lineAppear .8s ease forwards;
+
+    animation-delay: 1.8s;
+}
+
+
+.trade-line span {
+
+    position: absolute;
+
+    left: 5px;
+
+    top: -20px;
+
+    padding: 3px 6px;
+
+    border-radius: 3px;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: .5px;
+}
+
+
+.trade-line b {
+
+    position: absolute;
+
+    right: 5px;
+
+    top: -20px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+/* ENTRADA */
+
+.entry-line {
+
+    top: 54%;
+
+    border-color:
+        var(--gold);
+
+    color:
+        var(--gold-light);
+}
+
+.entry-line span {
+
+    background:
+        rgba(212,175,55,.13);
+
+    color:
+        var(--gold-light);
+}
+
+
+/* STOP LOSS */
+
+.sl-line {
+
+    top: 76%;
+
+    border-color:
+        rgba(190,80,60,.75);
+
+    color:
+        #c97b69;
+}
+
+.sl-line span {
+
+    background:
+        rgba(190,80,60,.1);
+
+    color:
+        #c97b69;
+}
+
+
+/* TAKE PROFIT */
+
+.tp-line {
+
+    top: 20%;
+
+    border-color:
+        rgba(212,175,55,.75);
+
+    color:
+        var(--gold-light);
+}
+
+.tp-line span {
+
+    background:
+        rgba(212,175,55,.1);
+
+    color:
+        var(--gold-light);
+}
+
+
+/* ANIMACIÓN DE LÍNEAS */
+
+@keyframes lineAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scaleX(.5);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scaleX(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   MARCADOR BUY
+===================================================== */
+
+.entry-marker {
+
+    position: absolute;
+
+    left: 47%;
+
+    top: calc(54% - 5px);
+
+    z-index: 8;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    opacity: 0;
+
+    animation:
+        entryAppear .7s ease forwards;
+
+    animation-delay: 2.4s;
+}
+
+
+.entry-arrow {
+
+    width: 22px;
+
+    height: 22px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--gold);
+
+    color:
+        #050505;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 0 20px
+        rgba(212,175,55,.5);
+}
+
+
+.entry-marker span {
+
+    color:
+        var(--gold-light);
+
+    font-size: 9px;
+
+    font-weight: 900;
+}
+
+
+@keyframes entryAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   INFORMACIÓN R:R
+===================================================== */
+
+.trade-info {
+
+    position: absolute;
+
+    right: 12px;
+
+    bottom: 12px;
+
+    z-index: 8;
+
+    padding: 8px 10px;
+
+    border:
+        1px solid
+        rgba(212,175,55,.15);
+
+    background:
+        rgba(0,0,0,.65);
+
+    border-radius: 6px;
+
+    backdrop-filter:
+        blur(5px);
+}
+
+
+.trade-info span {
+
+    display: block;
+
+    color: #666;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+
+.trade-info strong {
+
+    color:
+        var(--gold-light);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   BRILLO
+===================================================== */
+
+.chart-glow {
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    right: 5%;
+
+    top: 5%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(212,175,55,.035);
+
+    filter:
+        blur(35px);
+
+    pointer-events: none;
+
+    animation:
+        glowPulse 3s ease-in-out infinite;
+}
+
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+
+        opacity: .3;
+
+        transform: scale(.9);
+
+    }
+
+    50% {
+
+        opacity: .8;
+
+        transform: scale(1.1);
+
+    }
+
+}
+
+
+/* TEXTO DORADO */
+
+.gold-text {
+
+    color:
+        var(--gold-light) !important;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px) {
+
+    .chart-container {
+
+        transform: none;
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .trading-chart {
+
+        height: 280px;
+    }
+
+    .trade-line b {
+
+        display: none;
+    }
+
+    .entry-marker {
+
+        left: 42%;
+    }
+
+}
+/* =====================================================
+   GRÁFICO PROFESIONAL DE TRADING
+===================================================== */
+
+.chart-container {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #11110f,
+            #070707
+        );
+
+    border: 1px solid rgba(212,175,55,.22);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.65),
+        0 0 50px rgba(212,175,55,.04);
+
+    transform:
+        perspective(1000px)
+        rotateY(-3deg);
+}
+
+
+/* CABECERA */
+
+.chart-top,
+.chart-bottom {
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.chart-top small,
+.chart-bottom small {
+
+    display: block;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: .7px;
+}
+
+.chart-top strong,
+.chart-bottom strong {
+
+    display: block;
+
+    color: #eee;
+
+    font-size: 13px;
+}
+
+.market-positive {
+
+    color: var(--gold-light);
+
+    font-weight: 900;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   ÁREA DEL GRÁFICO
+===================================================== */
+
+.trading-chart {
+
+    height: 330px;
+
+    position: relative;
+
+    margin: 15px 0;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background:
+
+        radial-gradient(
+            circle at 75% 35%,
+            rgba(212,175,55,.045),
+            transparent 35%
+        ),
+
+        #080808;
+}
+
+
+/* GRID */
+
+.chart-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+    opacity: .8;
+}
+
+
+/* =====================================================
+   VELAS
+===================================================== */
+
+.candles {
+
+    position: absolute;
+
+    inset: 15px 10px 10px 10px;
+
+    display: flex;
+
+    align-items: stretch;
+
+    justify-content: space-between;
+
+    gap: 5px;
+
+    padding: 5px;
+
+    z-index: 3;
+}
+
+
+.candle {
+
+    position: relative;
+
+    flex: 1;
+
+    max-width: 13px;
+
+    opacity: 0;
+
+    transform:
+        translateY(20px)
+        scaleY(.7);
+
+    animation:
+        candleAppear .45s ease forwards;
+}
+
+
+/* MECHA */
+
+.candle::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: var(--wick-top);
+
+    width: 1px;
+
+    height: var(--wick-height);
+
+    transform: translateX(-50%);
+
+    background:
+        var(--candle-color);
+}
+
+
+/* CUERPO */
+
+.candle-body {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    top: var(--body-top);
+
+    height: var(--body-height);
+
+    min-height: 4px;
+
+    border-radius: 2px;
+
+    background:
+        var(--candle-color);
+
+    box-shadow:
+        0 0 5px
+        rgba(212,175,55,.08);
+}
+
+
+/* VELA ALCISTA */
+
+.candle.bull {
+
+    --candle-color:
+        linear-gradient(
+            180deg,
+            #f2d978,
+            #b58c24
+        );
+}
+
+
+/* VELA BAJISTA */
+
+.candle.bear {
+
+    --candle-color:
+        #6e5a25;
+}
+
+
+/* ÚLTIMA VELA */
+
+.candle:last-child .candle-body {
+
+    box-shadow:
+        0 0 12px
+        rgba(212,175,55,.65);
+}
+
+
+/* ANIMACIÓN */
+
+@keyframes candleAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scaleY(.6);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scaleY(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   LÍNEAS DE TRADING
+===================================================== */
+
+.trade-line {
+
+    position: absolute;
+
+    left: 10px;
+
+    right: 10px;
+
+    z-index: 6;
+
+    height: 1px;
+
+    border-top:
+        1px dashed;
+
+    opacity: 0;
+
+    animation:
+        lineAppear .8s ease forwards;
+
+    animation-delay: 1.8s;
+}
+
+
+.trade-line span {
+
+    position: absolute;
+
+    left: 5px;
+
+    top: -20px;
+
+    padding: 3px 6px;
+
+    border-radius: 3px;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: .5px;
+}
+
+
+.trade-line b {
+
+    position: absolute;
+
+    right: 5px;
+
+    top: -20px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+/* ENTRADA */
+
+.entry-line {
+
+    top: 54%;
+
+    border-color:
+        var(--gold);
+
+    color:
+        var(--gold-light);
+}
+
+.entry-line span {
+
+    background:
+        rgba(212,175,55,.13);
+
+    color:
+        var(--gold-light);
+}
+
+
+/* STOP LOSS */
+
+.sl-line {
+
+    top: 76%;
+
+    border-color:
+        rgba(190,80,60,.75);
+
+    color:
+        #c97b69;
+}
+
+.sl-line span {
+
+    background:
+        rgba(190,80,60,.1);
+
+    color:
+        #c97b69;
+}
+
+
+/* TAKE PROFIT */
+
+.tp-line {
+
+    top: 20%;
+
+    border-color:
+        rgba(212,175,55,.75);
+
+    color:
+        var(--gold-light);
+}
+
+.tp-line span {
+
+    background:
+        rgba(212,175,55,.1);
+
+    color:
+        var(--gold-light);
+}
+
+
+/* ANIMACIÓN DE LÍNEAS */
+
+@keyframes lineAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scaleX(.5);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scaleX(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   MARCADOR BUY
+===================================================== */
+
+.entry-marker {
+
+    position: absolute;
+
+    left: 47%;
+
+    top: calc(54% - 5px);
+
+    z-index: 8;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    opacity: 0;
+
+    animation:
+        entryAppear .7s ease forwards;
+
+    animation-delay: 2.4s;
+}
+
+
+.entry-arrow {
+
+    width: 22px;
+
+    height: 22px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--gold);
+
+    color:
+        #050505;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 0 20px
+        rgba(212,175,55,.5);
+}
+
+
+.entry-marker span {
+
+    color:
+        var(--gold-light);
+
+    font-size: 9px;
+
+    font-weight: 900;
+}
+
+
+@keyframes entryAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   INFORMACIÓN R:R
+===================================================== */
+
+.trade-info {
+
+    position: absolute;
+
+    right: 12px;
+
+    bottom: 12px;
+
+    z-index: 8;
+
+    padding: 8px 10px;
+
+    border:
+        1px solid
+        rgba(212,175,55,.15);
+
+    background:
+        rgba(0,0,0,.65);
+
+    border-radius: 6px;
+
+    backdrop-filter:
+        blur(5px);
+}
+
+
+.trade-info span {
+
+    display: block;
+
+    color: #666;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+
+.trade-info strong {
+
+    color:
+        var(--gold-light);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   BRILLO
+===================================================== */
+
+.chart-glow {
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    right: 5%;
+
+    top: 5%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(212,175,55,.035);
+
+    filter:
+        blur(35px);
+
+    pointer-events: none;
+
+    animation:
+        glowPulse 3s ease-in-out infinite;
+}
+
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+
+        opacity: .3;
+
+        transform: scale(.9);
+
+    }
+
+    50% {
+
+        opacity: .8;
+
+        transform: scale(1.1);
+
+    }
+
+}
+
+
+/* TEXTO DORADO */
+
+.gold-text {
+
+    color:
+        var(--gold-light) !important;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px) {
+
+    .chart-container {
+
+        transform: none;
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .trading-chart {
+
+        height: 280px;
+    }
+
+    .trade-line b {
+
+        display: none;
+    }
+
+    .entry-marker {
+
+        left: 42%;
+    }
+
+}
